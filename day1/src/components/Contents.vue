@@ -14,7 +14,8 @@
       </b-col>
     </b-row>
     <b-row class="py-2">
-      <b-col align-self="center">
+      <!-- <b-col align-self="center"> -->
+      <b-col>
         <b-list-group>
           <b-list-group-item v-for="day in daysList" :key="day.id">
             #{{ day.id }}&nbsp;｜&nbsp;
@@ -95,9 +96,12 @@ export default {
 .categoly-list {
   font-size: 0.9rem;
 }
+.categoly-list ul {
+  padding-left: 0;
+}
 .categoly-list ul,
 li {
   display: inline;
-  margin-right: 1rem;
+  margin-right: 0.75rem;
 }
 </style>
