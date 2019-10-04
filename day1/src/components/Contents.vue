@@ -5,7 +5,7 @@
         <div class="categoly-list">
           <p>※Filter still does not work.</p>
           <ul>
-            <li v-for="(tag, id) in tags_list" :key="id">
+            <li v-for="(tag, id) in filterTagsList" :key="id">
               <input type="checkbox" />
               <label>&nbsp;{{ tag }}</label>
             </li>
@@ -16,7 +16,7 @@
     <b-row class="py-2">
       <b-col align-self="center">
         <b-list-group>
-          <b-list-group-item v-for="day in days_list" :key="day.id">
+          <b-list-group-item v-for="day in daysList" :key="day.id">
             #{{ day.id }}&nbsp;｜&nbsp;
             <a :href="day.url">{{ day.title }}</a>
             <div class="margin-right">
@@ -41,11 +41,12 @@ import db from "@/firebase.js";
 export default {
   data() {
     return {
-      days_list: [],
-      tags_list: []
+      daysList: [], // 成果リスト
+      filterTagsList: [] // フィルタリング用のタグリスト
     };
   },
-  created: function() {
+  // DOM生成直後にDBアクセス
+  mounted: function() {
     db.collection("days")
       .get()
       .then(querySnapshot => {
@@ -53,25 +54,32 @@ export default {
           let data = {
             id: doc.data().id,
             title: doc.data().title,
-            tags: this.sortTags(doc.data().tags),
+            tags: this.ascSortTags(doc.data().tags),
             url: doc.data().url
           };
-          this.days_list.push(data);
+          this.daysList.push(data);
+          this.setFilterTagsList(data.tags);
         });
+        this.ascSortTags(this.filterTagsList);
       });
   },
   methods: {
-    sortTags(tags) {
+    // タグを昇順にソート
+    ascSortTags(tags) {
       let sortedTags = tags.sort((a, b) => {
-        return b - a;
+        // 大文字と小文字を考慮
+        a = a.toString().toLowerCase();
+        b = b.toString().toLowerCase();
+        return a < b ? -1 : 1;
       });
-
-      let _this = this;
-      sortedTags.forEach(function(val) {
-        _this.tags_list.push(val);
-      });
-
       return sortedTags;
+    },
+    // DBから取得したタグをフィルタリング用のタグリトスに追加
+    setFilterTagsList(tags) {
+      let _this = this;
+      tags.forEach(val => {
+        _this.filterTagsList.push(val);
+      });
     }
   }
 };
