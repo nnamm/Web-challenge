@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    "vue"
+    'vue'
   ],
   extends: [
     'eslint:recommended',

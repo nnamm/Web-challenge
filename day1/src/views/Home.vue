@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
-import Contents from "@/components/Contents.vue";
-import Footer from "@/components/Footer.vue";
+import Header from '@/components/Header.vue'
+import Contents from '@/components/Contents.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   components: {
@@ -17,5 +17,5 @@ export default {
     Contents,
     Footer
   }
-};
+}
 </script>

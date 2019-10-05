@@ -1,21 +1,33 @@
 <template>
   <div>
     <footer class="footer">
-      <p class="text">&copy; 2019 100 Web challenge.</p>
+      <p class="text">
+        &copy; 2019 100 Web challenge.
+      </p>
       <p class="text">
         made with
-        <a href="https://jp.vuejs.org/index.html" target="_blank">Vue.js</a>
-        <br />created by
-        <a href="https://nnamm.com" target="_blank">Takashi Q. Hanamura Photography</a>
+        <a
+          href="https://jp.vuejs.org/index.html"
+          target="_blank">Vue.js</a>
+        <br>created by
+        <a
+          href="https://nnamm.com"
+          target="_blank">Takashi Q. Hanamura Photography</a>
       </p>
       <p>
-        <a href="https://github.com/nnamm" target="_blank">
+        <a
+          href="https://github.com/nnamm"
+          target="_blank">
           <i class="fab fa-github fa-2x space" />
         </a>
-        <a href="https://twitter.com/nnammg" target="_blank">
+        <a
+          href="https://twitter.com/nnammg"
+          target="_blank">
           <i class="fab fa-twitter fa-2x space" />
         </a>
-        <a href="https://note.mu/tnnamm" target="_blank">
+        <a
+          href="https://note.mu/tnnamm"
+          target="_blank">
           <i class="far fa-sticky-note fa-2x space" />
         </a>
       </p>
