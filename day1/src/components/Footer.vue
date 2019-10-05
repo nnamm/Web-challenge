@@ -25,6 +25,7 @@
           target="_blank">
           <i class="fab fa-twitter fa-2x space" />
         </a>
+        <!-- TODO: マガジン名の決定後、そちらのリンクに差し替える -->
         <a
           href="https://note.mu/tnnamm"
           target="_blank">
@@ -38,7 +39,8 @@
 <style scoped>
 .footer {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 5rem;
+  margin-bottom: 1.5rem;
   padding: 1rem;
   color: #404040;
   font-size: 0.8rem;

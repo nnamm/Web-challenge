@@ -1,19 +1,18 @@
+// TODO: トランジションアニメーションをつけたい
 <template>
   <b-container>
     <b-row class="py-2">
       <b-col align-self="center">
-        <div class="categoly-list">
-          <p>※Filter still does not work.</p>
-          <p>{{ filteredTagsList }}</p>
+        <div class="tags-list"> 
           <ul>
-            <li
-              v-for="(tag, id) in filterTagsList"
-              :key="id">
+            Filter by&nbsp;:&nbsp;<li
+              v-for="tag in organizedTagsList"
+              :key="tag">
               <input
-                v-model="filteredTagsList"
-                type="checkbox"
+                :id="tag"
+                v-model="checkedTagsList"
                 :value="tag"
-                @click="displayFilteredDays">
+                type="checkbox">
               <label>&nbsp;{{ tag }}</label>
             </li>
           </ul>
@@ -24,12 +23,12 @@
       <b-col>
         <b-list-group>
           <b-list-group-item
-            v-for="day in daysList"
+            v-for="day in daysResultList"
             v-show="day.display"
             :key="day.id">
             #{{ day.id }}&nbsp;｜&nbsp;
             <a :href="day.url">{{ day.title }}</a>
-            <div class="margin-right">
+            <div class="d-flex justify-content-end">
               <b-badge
                 v-for="(tag, id) in day.tags"
                 :key="id"
@@ -52,9 +51,41 @@ import db from '@/firebase.js'
 export default {
   data() {
     return {
-      daysList: [], // 成果リスト
+      daysResultList: [], // 日々の成果リスト
       filterTagsList: [], // フィルタリング用のタグリスト（表示用）
-      filteredTagsList: [] // フィルタリング用のタグリスト（処理用）
+      checkedTagsList: [], // フィルタリング用にチェックされたタグリスト（内部処理用）
+      organizedTagsList: []
+    }
+  },
+  watch: {
+    // チェックボックスのON/OFFで発火
+    // チェックされたタグを含む成果リスト内の表示・非表示フラグをTrue/Flaseに変更
+    checkedTagsList: {
+      handler: function(){
+        let days = this.daysResultList
+        let checkedTags = this.checkedTagsList
+        let tempTags = []
+
+        // チェックボックスONにしたタグが1つ以上あるとき
+        if (checkedTags.length > 0) {
+          for (let i = 0, j = days.length; i < j; i++) {
+            tempTags = days[i].tags
+            // 指定したタグが含まれる成果リスト内のフラグを変更
+            for (let k = 0, l = checkedTags.length; k < l; k++) {
+              if (tempTags.indexOf(checkedTags[k]) >= 0) {
+                days[i].display = true
+                break
+              } else {
+                days[i].display = false
+              }
+            }
+          }
+        } else {
+          for (let i = 0, j = days.length; i < j; i++) {
+            days[i].display = true
+          }
+        }
+      }
     }
   },
   // DOM生成直後にDBアクセス
@@ -71,11 +102,19 @@ export default {
             url: doc.data().url,
             display: doc.data().display // 表示可否フラグ
           }
-          this.daysList.push(data)
-          this.setFilterTagsList(data.tags)
+          this.daysResultList.push(data)
+
+          // 取得したタグ（配列）をフィルタリング用のタグリストに追加
+          let _this = this
+          data.tags.forEach(val => {
+            _this.filterTagsList.push(val)
+          })
         })
-        // フィルタリング用のタグリストを昇順にソート
+        // フィルタリング用のタグリストを昇順にソートし、重複項目を削除
         this.ascSortTags(this.filterTagsList)
+        this.organizedTagsList = this.filterTagsList.filter(function(x, i, self){
+          return self.indexOf(x) === i
+        })
       })
   },
   methods: {
@@ -95,54 +134,25 @@ export default {
       tags.forEach(val => {
         _this.filterTagsList.push(val)
       })
-    },
-    // 発火
-    displayFilteredDays() {
-      let days = this.daysList
-      // TODO: なぜか2回目のクリックで1回目のクリック情報が活きている
-      let filteredTags = this.filteredTagsList
-      let tags = []
-
-      console.log(filteredTags)
-
-      if (filteredTags.length > 0) {
-        for (let i = 0, j = days.length; i < j; i++) {
-          tags = days[i].tags
-          for (let k = 0, l = filteredTags.length; k < l; k++) {
-            if (tags.indexOf(filteredTags[k]) >= 0) {
-              days[i].display = true
-              break
-            } else {
-              days[i].display = false
-            }
-          }
-        }
-      } else {
-        for (let i = 0, j = days.length; i < j; i++) {
-          days[i].display = true
-        }
-      }
     }
   }
 }
 </script>
 
 <style scoprd>
-.margin-right {
-  float: right;
-}
-.margin-space {
-  margin-left: 0.2rem;
-}
-.categoly-list {
+.tags-list {
   font-size: 0.9rem;
 }
-.categoly-list ul {
+.tags-list ul {
   padding-left: 0;
 }
-.categoly-list ul,
+.tags-list ul,
 li {
   display: inline;
   margin-right: 0.75rem;
+  font-weight: bold;
+}
+.margin-space {
+  margin-left: 0.2rem;
 }
 </style>
