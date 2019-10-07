@@ -25,9 +25,8 @@
           target="_blank">
           <i class="fab fa-twitter fa-2x space" />
         </a>
-        <!-- TODO: マガジン名の決定後、そちらのリンクに差し替える -->
         <a
-          href="https://note.mu/tnnamm"
+          href="https://note.mu/tnnamm/m/mebf5116cd419"
           target="_blank">
           <i class="far fa-sticky-note fa-2x space" />
         </a>
