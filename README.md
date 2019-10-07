@@ -7,3 +7,5 @@ Webのフロントエンド・バックエンド的なことを学び、その�
 \#1. Homepage
 
 \#2. Fly particles on Vue.js
+
+\#3. Play with the hash library.
