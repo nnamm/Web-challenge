@@ -1,6 +1,8 @@
 import Firebase from 'firebase/app'
+import 'firebase/auth'
 import 'firebase/firestore'
 
+// ルートディレクトリの.envにある設定値を読み込む
 const firebaseConfig = {
   apiKey: process.env.VUE_APP_FB_API_KEY,
   authDomain: process.env.VUE_APP_FB_AUTH_DOMAIN,
@@ -13,5 +15,6 @@ const firebaseConfig = {
 }
 const app = Firebase.initializeApp(firebaseConfig)
 const db = Firebase.firestore(app)
+const auth = Firebase.auth(app)
 
-export default db
+export { db, auth }

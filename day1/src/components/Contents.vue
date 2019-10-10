@@ -46,15 +46,16 @@
 </template>
 
 <script>
-import db from '@/firebase.js'
+import { db } from '@/firebase'
 
 export default {
+  name: 'Contents',
   data() {
     return {
       daysResultList: [], // 日々の成果リスト
       filterTagsList: [], // フィルタリング用のタグリスト（表示用）
       checkedTagsList: [], // フィルタリング用にチェックされたタグリスト（内部処理用）
-      organizedTagsList: []
+      organizedTagsList: [],
     }
   },
   watch: {
@@ -90,32 +91,32 @@ export default {
   },
   // DOM生成直後にDBアクセス
   mounted: function() {
-    db.collection('days')
-      .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          // daysコレクション → 成果ドキュメント → 各フィールドを展開
-          let data = {
-            id: doc.data().id,
-            title: doc.data().title,
-            tags: this.ascSortTags(doc.data().tags),
-            url: doc.data().url,
-            display: doc.data().display // 表示可否フラグ
-          }
-          this.daysResultList.push(data)
+    const me = this
+    const ref = db.collection('days')
 
-          // 取得したタグ（配列）をフィルタリング用のタグリストに追加
-          let _this = this
-          data.tags.forEach(val => {
-            _this.filterTagsList.push(val)
-          })
-        })
-        // フィルタリング用のタグリストを昇順にソートし、重複項目を削除
-        this.ascSortTags(this.filterTagsList)
-        this.organizedTagsList = this.filterTagsList.filter(function(x, i, self){
-          return self.indexOf(x) === i
+    ref.get().then(querySnapshot => {
+      querySnapshot.forEach(doc => {
+        // daysコレクション → 成果ドキュメント → 各フィールドを展開
+        let data = {
+          id: doc.data().id,
+          title: doc.data().title,
+          tags: this.ascSortTags(doc.data().tags),
+          url: doc.data().url,
+          display: doc.data().display // 表示可否フラグ
+        }
+        this.daysResultList.push(data)
+
+        // 取得したタグ（配列）をフィルタリング用のタグリストに追加
+        data.tags.forEach(val => {
+          me.filterTagsList.push(val)
         })
       })
+      // フィルタリング用のタグリストを昇順にソートし、重複項目を削除
+      this.ascSortTags(this.filterTagsList)
+      this.organizedTagsList = this.filterTagsList.filter(function(x, i, self){
+        return self.indexOf(x) === i
+      })
+    })
   },
   methods: {
     // タグを昇順にソート

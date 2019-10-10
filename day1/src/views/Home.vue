@@ -12,6 +12,7 @@ import Contents from '@/components/Contents.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
+  name: 'Home',
   components: {
     Header,
     Contents,

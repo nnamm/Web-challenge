@@ -10,14 +10,6 @@
           width="100%">
       </b-col>
     </b-row>
-    <!-- ユーザ表示部分  -->
-    <b-row align-h="center">
-      <b-col
-        class="mt-3 px-5"
-        md="6">
-        <p>Login user: {{ user.email }}</p>
-      </b-col>
-    </b-row>
     <!-- 入力部分  -->
     <b-row align-h="center">
       <b-col
@@ -37,13 +29,6 @@
             v-model="password"
             placeholder="Enter password" />
         </b-form-group>
-        <b-form-group
-          label-cols-md="3"
-          label="Password">
-          <b-form-input
-            v-model="password"
-            placeholder="Enter password" />
-        </b-form-group>
       </b-col>
     </b-row>
     <!-- ボタン部分 -->
@@ -53,41 +38,38 @@
         md="6">
         <input
           type="button"
-          value="Add">
+          value="Login"
+          @click="logIn">
       </b-col>
     </b-row>
   </b-container>
 </template>
 
-// TODO: daysにpushするロジックを作る
-// doc → id, title、tags, url, display=true
-// tagsは「,」区切りで追加する
-// それを分割してオブジェクトに追加するロジックを組む
-// ↓objはこんな感じ
-// {
-//   id: id,
-//   title: title,
-//   tags: [],
-//   url: url,
-//   display: true
-// }
-
 <script>
-import { auth } from '@/firebase.js'
+import { auth } from '@/firebase'
 
 export default {
-  name: 'Add',
+  name: 'Login',
   data() {
     return {
       email: '',
-      password: '',
-      user: {}
+      password: ''
     }
   },
-  created: function() {
-    this.user = auth.currentUser
-  },
   methods: {
+    // TODO: セッションを保持してAdd.vueをリロードしても認証状態にする
+    logIn: function(){
+      auth.signInWithEmailAndPassword(this.email, this.password)
+      .then(
+        user => {
+          alert('Log-in success: ' + user.user.email)
+          this.$router.push('/add')
+        },
+        err => {
+          alert(err.message)
+        }
+      )
+  }
   }
 }
 </script>
