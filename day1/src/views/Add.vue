@@ -25,24 +25,31 @@
         md="6">
         <b-form-group
           label-cols-md="3"
-          label="email">
+          label="ID">
           <b-form-input
-            v-model="email"
-            placeholder="Enter your Email" />
+            v-model="id"
+            type="number" />
         </b-form-group>
         <b-form-group
           label-cols-md="3"
-          label="Password">
+          label="Title">
           <b-form-input
-            v-model="password"
-            placeholder="Enter password" />
+            v-model="title"
+            type="text" />
         </b-form-group>
         <b-form-group
           label-cols-md="3"
-          label="Password">
+          label="Tags">
           <b-form-input
-            v-model="password"
-            placeholder="Enter password" />
+            v-model="tags"
+            type="text" />
+        </b-form-group>
+        <b-form-group
+          label-cols-md="3"
+          label="url">
+          <b-form-input
+            v-model="url"
+            type="text" />
         </b-form-group>
       </b-col>
     </b-row>
@@ -53,7 +60,8 @@
         md="6">
         <input
           type="button"
-          value="Add">
+          value="Add"
+          @click="addContent">
       </b-col>
     </b-row>
   </b-container>
@@ -74,20 +82,40 @@
 
 <script>
 import { auth } from '@/firebase.js'
+import { db } from '@/firebase.js'
 
 export default {
   name: 'Add',
   data() {
     return {
-      email: '',
-      password: '',
-      user: {}
+      id: '',
+      title: '',
+      tags: '',
+      tagsArray: [],
+      url: '',
     }
   },
   created: function() {
     this.user = auth.currentUser
   },
   methods: {
+    addContent: function(){
+      const me = this
+      const doc = {
+        id: this.id,
+        title: this.title,
+        tags: this.tagsArray,
+        url: this.url,
+        display: true
+      }
+      // TODO: ドキュメント名の指定方法は？
+      // TODO: meはundefinedになる
+      db.collection('days').add(doc)
+      .then((docref)=>{
+        me.days.push(doc)
+        console.log(docref)
+      })
+    }
   }
 }
 </script>
