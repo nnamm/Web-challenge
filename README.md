@@ -8,6 +8,6 @@ Webのフロントエンド・バックエンド的なことを学び、その�
 
 \#2. [Fly particles on Vue.js](https://thanamura.work/_days/day2/)
 
-\#3. [Play with the hash library](_days/day3/)
+\#3. [Play with the hash library](https://thanamura.work/_days/day3/)
 
-\#4. [Perlin noise with p5.js](_days/day4/)
+\#4. [Perlin noise with p5.js](https://thanamura.work/_days/day4/)
