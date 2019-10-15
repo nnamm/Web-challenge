@@ -15,7 +15,17 @@
       <b-col
         class="mt-3 px-5"
         md="6">
-        <p>Login user: {{ user.email }}</p>
+        <p class="login-text">
+          Log-in user: {{ user.email }}
+          <b-button
+            class="logout-btn"
+            pill
+            variant="warning"
+            size="sm"
+            @click="logOut">
+            Log-out
+          </b-button>
+        </p>
       </b-col>
     </b-row>
     <!-- 入力部分  -->
@@ -102,7 +112,7 @@ export default {
     addContent: function(){
       const me = this
       const doc = {
-        id: this.id,
+        id: Number(this.id),
         title: this.title,
         tags: this.tagsArray,
         url: this.url,
@@ -111,9 +121,15 @@ export default {
       // TODO: ドキュメント名の指定方法は？
       // TODO: meはundefinedになる
       db.collection('days').add(doc)
-      .then((docref)=>{
+      .then((docref) => {
         me.days.push(doc)
+        alert('Addition complete')
         console.log(docref)
+      })
+    },
+    logOut: function(){
+      auth.signOut().then(() => {
+        this.$router.push('/login')
       })
     }
   }
@@ -121,6 +137,12 @@ export default {
 </script>
 
 <style scorped>
+.login-text {
+  font-weight: bold;
+}
+.logout-btn {
+  margin-left: 1rem;
+}
 .button-center {
   text-align: center;
 }

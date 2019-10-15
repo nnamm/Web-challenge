@@ -17,17 +17,19 @@
         md="6">
         <b-form-group
           label-cols-md="3"
-          label="email">
+          label="Email">
           <b-form-input
             v-model="email"
-            placeholder="Enter your Email" />
+            type="email"
+            placeholder="Email address" />
         </b-form-group>
         <b-form-group
           label-cols-md="3"
           label="Password">
           <b-form-input
             v-model="password"
-            placeholder="Enter password" />
+            type="password"
+            placeholder="Password" />
         </b-form-group>
       </b-col>
     </b-row>
@@ -57,7 +59,6 @@ export default {
     }
   },
   methods: {
-    // TODO: セッションを保持してAdd.vueをリロードしても認証状態にする
     logIn: function(){
       auth.signInWithEmailAndPassword(this.email, this.password)
       .then(
