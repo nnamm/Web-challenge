@@ -1,0 +1,103 @@
+// -------------------------
+// フォント設定
+// -------------------------
+$font_list: fot-klee-pro, sans-serif;
+$font_style: normal;
+$font_weight: 500;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+#sidebar {
+  font-family: $font_list;
+  font-style: $font_style;
+  font-weight: $font_weight;
+}
+#sidebar {
+  text-shadow: 1px 1px 2px #333;
+}
+.post,
+.postShorten {
+  .postShorten-excerpt_link,
+  .postShorten-meta,
+  .postShorten-readingtime {
+    font-family: $font_list;
+    font-style: $font_style;
+    font-weight: $font_weight;
+  }
+}
+
+// -------------------------
+// 余白
+// -------------------------
+// 見出し
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 2em 0 0 0;
+}
+// リスト
+ul {
+  margin: 2em 0 0 0;
+  li {
+    margin: 0.5em 0 0 0;
+  }
+}
+// 引用（＋文字サイズ）
+blockquote {
+  > p {
+    font-size: 0.9em;
+  }
+  > p:first-child {
+    margin: 2em 0;
+  }
+}
+// パラグラフと画像
+.post {
+  .post-content {
+    :not(blockquote) {
+      &:not(.alert) {
+        > p {
+          margin: 2em 0 0 0;
+        }
+      }
+    }
+    img {
+      margin: 2em 0;
+    }
+  }
+}
+
+// -------------------------
+// デフォルトクラスのカスタム
+// -------------------------
+// プロフィール画像：角度
+.sidebar-profile-picture,
+#about-card-picture {
+  transform: rotate(10deg);
+}
+// 記事：カバー写真（スマホ時のみ）
+@media (max-width: 30em) {
+  .post-header-cover {
+    &.post-header-cover--partial {
+      height: 30%;
+    }
+  }
+}
+// ヘッダーエリア：横幅（coverMeta: outの場合）
+.post-header {
+  max-width: 640px;
+}
+// 記事、フッタエリア：横幅
+.post-content > .main-content-wrap,
+#post-footer {
+  max-width: 680px;
+}
