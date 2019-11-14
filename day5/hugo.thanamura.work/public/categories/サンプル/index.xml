@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>サンプル on 100 Web challenge DEMO-blog by HUGO</title>
+    <link>https://thanamura.work/_days/day5/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/</link>
+    <description>Recent content in サンプル on 100 Web challenge DEMO-blog by HUGO</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 10 Nov 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://thanamura.work/_days/day5/categories/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>サンプルテキスト</title>
+      <link>https://thanamura.work/_days/day5/post/001-191110/sample-text/</link>
+      <pubDate>Sun, 10 Nov 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://thanamura.work/_days/day5/post/001-191110/sample-text/</guid>
+      <description>記念すべき最初の記事です。</description>
+    </item>
+    
+  </channel>
+</rss>

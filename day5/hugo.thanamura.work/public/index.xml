@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>100 Web challenge DEMO-blog by HUGO</title>
+    <link>https://thanamura.work/_days/day5/</link>
+    <description>Recent content on 100 Web challenge DEMO-blog by HUGO</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Mon, 11 Nov 2019 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://thanamura.work/_days/day5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>吾輩は猫でありつつ、Lorem ipsumでありつつ</title>
+      <link>https://thanamura.work/_days/day5/post/002-191111/dummy-text/</link>
+      <pubDate>Mon, 11 Nov 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://thanamura.work/_days/day5/post/002-191111/dummy-text/</guid>
+      <description>2記事目です。</description>
+    </item>
+    
+    <item>
+      <title>サンプルテキスト</title>
+      <link>https://thanamura.work/_days/day5/post/001-191110/sample-text/</link>
+      <pubDate>Sun, 10 Nov 2019 00:00:00 +0900</pubDate>
+      
+      <guid>https://thanamura.work/_days/day5/post/001-191110/sample-text/</guid>
+      <description>記念すべき最初の記事です。</description>
+    </item>
+    
+  </channel>
+</rss>
