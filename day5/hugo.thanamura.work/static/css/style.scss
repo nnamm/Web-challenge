@@ -85,13 +85,13 @@ blockquote {
   transform: rotate(10deg);
 }
 // 記事：カバー写真（スマホ時のみ）
-@media (max-width: 30em) {
-  .post-header-cover {
-    &.post-header-cover--partial {
-      height: 30%;
-    }
-  }
-}
+// @media (max-width: 30em) {
+//   .post-header-cover {
+//     &.post-header-cover--partial {
+//       height: 60%;
+//     }
+//   }
+// }
 // ヘッダーエリア：横幅（coverMeta: outの場合）
 .post-header {
   max-width: 640px;
