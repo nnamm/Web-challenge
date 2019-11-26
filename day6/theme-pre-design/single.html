@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- <link rel="preload" href="./static/uikit-3.2.3/uikit.min.css" as="style" />
+  <link rel="preload" href="./static/css/style.min.css" as="style" />
+  <link rel="stylesheet" href="./static/uikit-3.2.3/uikit.min.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="./static/css/style.min.css" media="print" onload="this.media='all'" /> -->
+  <link rel="stylesheet" type="text/css" href="./static/uikit-3.2.3/uikit.min.css">
+  <link rel="stylesheet" type="text/css" href="./static/css/style.min.css">
+  <script src="./static/uikit-3.2.3/uikit.min.js" defer="defer"></script>
+  <script src="./static/uikit-3.2.3/uikit-icons.min.js" defer="defer"></script>
+  <script>(function (d) { var config = { kitId: 'epb3wtr', scriptTimeout: 3000, async: true }, h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s) })(document);</script>
+</head>
+
+<body>
+  <header>
+    <nav class="uk-navbar-container uk-padding-large uk-padding-remove-vertical" uk-navbar>
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="#">N A M L O G</a>
+      </div>
+      <div class="uk-navbar-right">
+        <!-- menu / pc -->
+        <div class="uk-visible@m">
+          <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">ABOUT</a></li>
+            <li class="uk-active"><a href="#" uk-icon="search"></a></li>
+          </ul>
+        </div>
+        <!-- menu / mobile -->
+        <div class="uk-hidden@m">
+          <ul class="uk-navbar-nav">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target:#offcanvas-usage"></a>
+            <div id="offcanvas-usage" uk-offcanvas>
+              <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <h4>M E N U</h4>
+                <ul class="uk-nav uk-nav-default">
+                  <li class="uk-active uk-padding-small"><a href="#">ABOUT</a></li>
+                  <li class="uk-active uk-padding-small"><a href="#" uk-icon="search"></a></li>
+                </ul>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="uk-container uk-container-xsmall uk-padding-large uk-background-default">
+    <article class="uk-article">
+      <div class="uk-cover-container">
+        <canvas width="800" height="400"></canvas>
+        <img src="images/sample1.jpg" alt="" uk-cover>
+      </div>
+
+      <div class="uk-margin-medium-top uk-margin-medium-bottom">
+        <h1 class="uk-article-title">記事のタイトル</h1>
+        <p class="uk-article-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+        <div class="uk-badge uk-label uk-label-success uk-text-capitalize">Badge</div>
+      </div>
+
+      <div class="nam__article-content">
+        <h2>見出し2</h2>
+
+        <p>掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</p>
+
+        <p>その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。</p>
+
+        <p>のみならず顔の真中があまりに突起している。</p>
+
+        <h3>見出し3</h3>
+
+        <img src="images/sample4.jpg" alt="">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <h2>見出し2-2</h2>
+
+        <ul class="uk-list uk-list-bullet">
+          <li>名前はまだない。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。</li>
+          <li>吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのはときどき我々を捕えて煮て食うという話である。</li>
+          <li>しかしその当時は何という考もなかったから別段恐しいとも思わなかった。ただ彼の掌に載せられてスーと持ち上げられた時何だかフワフワした感じがあったばかりである。</li>
+        </ul>
+
+        <blockquote>
+          ここ、引用です。ここ、引用です。ここ、引用です。ここ、引用です。ここ、引用です。
+          ここ、引用です。
+        </blockquote>
+
+        <p>掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</p>
+
+        <p>その後猫にもだいぶ逢ったがこんな片輪には一度も出会わした事がない。</p>
+
+        <p>のみならず顔の真中があまりに突起している。</p>
+
+      </div>
+
+      <!-- TODO: Contents / タグ -->
+      <div></div>
+
+      <!-- TODO: Contents / 前後の記事 -->
+      <div></div>
+
+    </article>
+  </div>
+
+  <div class="uk-container uk-container-xsmall uk-margin uk-margin-remove-bottom uk-padding-large uk-background-default">
+    <h3 class="uk-text-center uk-margin-medium-bottom">About me</h3>
+    <div class="uk-child-width-1-2@m" uk-grid>
+      <div>
+        <div class="uk-panel uk-text-center">
+          <img class="uk-border-circle" width="200" height="200" src="images/prof.jpg">
+          <p class="uk-link-reset">
+            <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="behance"></span></a>
+            <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="facebook"></span></a>
+            <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="flickr"></span></a>
+            <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="github"></span></a>
+            <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="twitter"></span></a>
+            <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="wordpress"></span></a>
+            <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="youtube"></span></a>
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="uk-panel">
+          <p>花村貴史｜Takashi Q. Hanamura</p>
+          <p class="nam__about-content">
+            ソフトウェアエンジニア＆フォトグラファー。Web開発をしながら、人物や風景の空気感をそぉっとすくい撮ってます。脳と身体、異なる神経回路を使いながら活動中。<br>横浜生まれの横浜歴38年、松本歴2年半を経て、2018年春から関西在住。京都が近くなってうれしい。2019年11月から夫婦生活スタート。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="uk-container uk-margin-large uk-margin-remove-bottom uk-padding-large">
+      <p class="uk-text-small uk-text-center">&copy;2019 NAMLOG</p>
+    </div>
+  </footer>
+</body>
+
+</html>

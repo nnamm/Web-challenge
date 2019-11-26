@@ -1,0 +1,83 @@
+$main-background: #f8f8f8;
+$font-basic-size: 1rem;
+$headline-basic-size: 2rem;
+$line-basic-height: 1.8rem;
+$basic-space: 0.1rem;
+$font_list: fot-klee-pro, sans-serif;
+$font_list_old: "游明朝体", "YuMincho", "游明朝", "Yu Mincho", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", serif;
+
+body {
+  font-family: $font_list;
+  font-size: 0.9rem;
+  background-color: $main-background;
+  min-width: 320px;
+}
+
+// ブログ記事
+article>.nam__article-content {
+  line-height: $line-basic-height;
+
+  &>h2 {
+    font-size: $headline-basic-size - ($basic-space * 4);
+    padding-bottom: calc(5px + .1em);
+    border-bottom: calc(.2px + .05em) solid #e5e5e5;
+  }
+
+  &>h3 {
+    font-size: $headline-basic-size - ($basic-space * 8);
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: relative;
+      top: calc(-.1 * 1em);
+      vertical-align: middle;
+      height: calc(4px + .7em);
+      margin-right: calc(5px + .2em);
+      border-left: calc(5px + .1em) solid #e5e5e5;
+    }
+  }
+
+  &>h4 {
+    font-size: $headline-basic-size - ($basic-space * 12);
+  }
+
+  &>blockquote {
+    margin: 3rem 0;
+    padding: 2rem;
+    font-size: $font-basic-size - 0.1rem;
+    line-height: $line-basic-height - 0.2rem;
+    background-color: $main-background;
+  }
+}
+
+.nam__icon-space {
+  padding-right: $basic-space * 3;
+}
+
+.nam__about-content {
+  line-height: $line-basic-height;
+}
+
+/*-- 既存クラスをオーバーライド --*/
+.uk-card-default {
+  box-shadow: none;
+}
+
+.uk-card-title {
+  font-size: $font-basic-size + 0.05rem;
+}
+
+.uk-article-title {
+  font-size: $headline-basic-size;
+}
+
+.uk-article-meta,
+.uk-text-meta,
+.uk-label {
+  font-size: $font-basic-size - 0.2rem;
+}
+
+.uk-text-small {
+  font-size: $font-basic-size - 0.25rem;
+}

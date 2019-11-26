@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- <link rel="preload" href="./static/uikit-3.2.3/uikit.min.css" as="style" />
+  <link rel="preload" href="./static/css/style.min.css" as="style" />
+  <link rel="stylesheet" href="./static/uikit-3.2.3/uikit.min.css" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="./static/css/style.min.css" media="print" onload="this.media='all'" /> -->
+  <link rel="stylesheet" type="text/css" href="./static/uikit-3.2.3/uikit.min.css">
+  <link rel="stylesheet" type="text/css" href="./static/css/style.min.css">
+  <script src="./static/uikit-3.2.3/uikit.min.js" defer="defer"></script>
+  <script src="./static/uikit-3.2.3/uikit-icons.min.js" defer="defer"></script>
+  <script>(function (d) { var config = { kitId: 'epb3wtr', scriptTimeout: 3000, async: true }, h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s) })(document);</script>
+</head>
+
+<body>
+  <header>
+    <nav class="uk-navbar-container uk-padding-large uk-padding-remove-vertical" uk-navbar>
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="#">N A M L O G</a>
+      </div>
+      <div class="uk-navbar-right">
+        <!-- menu / pc -->
+        <div class="uk-visible@m">
+          <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">ABOUT</a></li>
+            <li class="uk-active"><a href="#" uk-icon="search"></a></li>
+          </ul>
+        </div>
+        <!-- menu / mobile -->
+        <div class="uk-hidden@m">
+          <ul class="uk-navbar-nav">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target:#offcanvas-usage"></a>
+            <div id="offcanvas-usage" uk-offcanvas>
+              <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <h4>M E N U</h4>
+                <ul class="uk-nav uk-nav-default">
+                  <li class="uk-active uk-padding-small"><a href="#">ABOUT</a></li>
+                  <li class="uk-active uk-padding-small"><a href="#" uk-icon="search"></a></li>
+                </ul>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Cover1 -->
+  <section>
+    <div class="uk-cover-container uk-margin-large-bottom">
+      <!-- Cover / PC -->
+      <div class="uk-visible@m">
+        <div class="uk-grid-collapse" uk-grid>
+          <div class="uk-width-4-5">
+            <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
+              uk-slideshow="animation:fade; velocity:0.2; autoplay:true; autoplay-interval:8000;ratio:3:1;">
+              <ul class="uk-slideshow-items">
+                <li>
+                  <img src="images/sample1.jpg" alt="" uk-cover>
+                  <div class="uk-position-bottom-right">
+                    <p class="uk-margin-remove">「1」</p>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/sample2.jpg" alt="" uk-cover>
+                  <div class="uk-position-bottom-right">
+                    <p class="uk-margin-remove">「2」</p>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/sample3.jpg" alt="" uk-cover>
+                  <div class="uk-position-bottom-right">
+                    <p class="uk-margin-remove">「3」</p>
+                  </div>
+                </li>
+                <li>
+                  <img src="images/sample4.jpg" alt="" uk-cover>
+                  <div class="uk-position-bottom-right">
+                    <p class="uk-margin-remove">「4」</p>
+                  </div>
+                </li>
+              </ul>
+              <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+              <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+            </div>
+          </div>
+          <div class="uk-width-1-5">
+            <div class="uk-padding-large uk-padding-remove-vertical uk-margin-remove uk-position-small uk-position-bottom-right">
+              <p class="uk-text-muted uk-text-small uk-margin-remove">
+                1. 2015.11 奈良県<br>
+                2. 2016.10 長野県大町市<br>
+                3. 2018.05 京都市上京区<br>
+                4. 2018.05 京都市上京区<br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cover / Mobile -->
+      <div class="uk-hidden@m">
+        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1"
+          uk-slideshow="animation:fade; velocity:0.2; autoplay:true; autoplay-interval:8000;ratio:2:1;">
+          <ul class="uk-slideshow-items">
+            <li>
+              <img src="images/sample1.jpg" alt="" uk-cover>
+            </li>
+            <li>
+              <img src="images/sample2.jpg" alt="" uk-cover>
+            </li>
+            <li>
+              <img src="images/sample3.jpg" alt="" uk-cover>
+            </li>
+            <li>
+              <img src="images/sample4.jpg" alt="" uk-cover>
+            </li>
+          </ul>
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contents / Posts -->
+  <section>
+    <div class="uk-container uk-margin-large uk-padding">
+      <!-- sub title -->
+      <h2 class="uk-h2 uk-text-center uk-margin-bottom">New Posts</h2>
+      <!-- PC -->
+      <div class="uk-visible@m">
+        <div class="uk-padding-large">
+          <!-- Row1 -->
+          <div class="uk-grid-match uk-grid-medium uk-child-width-expand@m" uk-grid>
+            <div>
+              <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                <a class="uk-link-reset" href="./single.html">
+                  <div class="uk-badge uk-label uk-label-success uk-text-capitalize uk-position-top-left">Badge</div>
+                  <div class="uk-card-media-top uk-margin-small-top">
+                    <img src="images/sample1.jpg" alt="">
+                  </div>
+                  <h2 class="uk-card-title uk-margin-top">カメラマンの腕が素晴らしい</h2>
+                  <p class="uk-text-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+                  <p class="uk-text-small">40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。</p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                <a class="uk-link-reset" href="#">
+                  <div class="uk-badge uk-label uk-label-success uk-text-capitalize uk-position-top-left">Badge</div>
+                  <div class="uk-card-media-top uk-margin-small-top">
+                    <img src="images/sample2.jpg" alt="">
+                  </div>
+                  <h2 class="uk-card-title uk-margin-top">カメラマンの</h2>
+                  <p class="uk-text-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+                  <p class="uk-text-small">40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。</p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                <a class="uk-link-reset" href="#">
+                  <div class="uk-badge uk-label uk-label-success uk-text-capitalize uk-position-top-left">Badge</div>
+                  <div class="uk-card-media-top uk-margin-small-top">
+                    <img src="images/sample3.jpg" alt="">
+                  </div>
+                  <h2 class="uk-card-title uk-margin-top">カメラマンの腕が素晴らしいいいいいいいいいいいいいい</h2>
+                  <p class="uk-text-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+                  <p class="uk-text-small">40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Row2 -->
+          <div class="uk-grid-match uk-grid-medium uk-child-width-expand@m" uk-grid>
+            <div>
+              <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                <a class="uk-link-reset" href="#">
+                  <div class="uk-badge uk-label uk-label-success uk-text-capitalize uk-position-top-left">Badge</div>
+                  <div class="uk-card-media-top uk-margin-small-top">
+                    <img src="images/sample1.jpg" alt="">
+                  </div>
+                  <h2 class="uk-card-title uk-margin-top">カメラマンの腕が素晴らしい</h2>
+                  <p class="uk-text-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+                  <p class="uk-text-small">40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。</p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                <a class="uk-link-reset" href="#">
+                  <div class="uk-badge uk-label uk-label-success uk-text-capitalize uk-position-top-left">Badge</div>
+                  <div class="uk-card-media-top uk-margin-small-top">
+                    <img src="images/sample2.jpg" alt="">
+                  </div>
+                  <h2 class="uk-card-title uk-margin-top">カメラマンの</h2>
+                  <p class="uk-text-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+                  <p class="uk-text-small">40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。</p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="uk-card uk-card-muted uk-card-small uk-card-body">
+                <!-- 空き  -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile -->
+      <div class="uk-hidden@m">
+        <!-- list1 -->
+        <a class="uk-link-reset" href="./single.html">
+          <div class="uk-card uk-card-default uk-card-small uk-margin uk-card-body">
+            <h2 class="uk-card-title">カメラマンの腕が素晴らしい</h2>
+            <p class="uk-text-small">40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。</p>
+            <p class="uk-text-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+            <div class="uk-badge uk-label uk-label-success uk-text-capitalize">Badge</div>
+          </div>
+        </a>
+        <!-- list2 -->
+        <a class="uk-link-reset" href="#">
+          <div class="uk-card uk-card-default uk-card-small uk-margin uk-card-body">
+            <h2 class="uk-card-title">カメラマンの</h2>
+            <p class="uk-text-small">40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。</p>
+            <p class="uk-text-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+            <div class="uk-badge uk-label uk-label-success uk-text-capitalize">Badge</div>
+          </div>
+        </a>
+        <!-- list3 -->
+        <a class="uk-link-reset" href="#">
+          <div class="uk-card uk-card-default uk-card-small uk-margin uk-card-body">
+            <h2 class="uk-card-title">カメラマンの腕が素晴らしいいいいいいいいいいいいいい</h2>
+            <p class="uk-text-small">40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。</p>
+            <p class="uk-text-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+            <div class="uk-badge uk-label uk-label-success uk-text-capitalize">Badge</div>
+          </div>
+        </a>
+        <!-- list4 -->
+        <a class="uk-link-reset" href="#">
+          <div class="uk-card uk-card-default uk-card-small uk-margin uk-card-body">
+            <h2 class="uk-card-title">カメラマンの腕が素晴らしいいいいいいいいいいいいいい</h2>
+            <p class="uk-text-small">40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。40文字くらいの見出し。</p>
+            <p class="uk-text-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
+            <div class="uk-badge uk-label uk-label-success uk-text-capitalize">Badge</div>
+          </div>
+        </a>
+      </div>
+      <ul class="uk-pagination uk-flex-center">
+        <li><a href="#"><span uk-pagination-previous></span></a></li>
+        <li><a href="#">1</a></li>
+        <li class="uk-disabled"><span>...</span></li>
+        <li><a href="#">5</a></li>
+        <li class="uk-active"><span>6</span></li>
+        <li><a href="#">7</a></li>
+        <li class="uk-disabled"><span>...</span></li>
+        <li><a href="#">10</a></li>
+        <li><a href="#"><span uk-pagination-next></span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contents / About -->
+  <section>
+    <div class="uk-container uk-container-xsmall uk-padding uk-background-default">
+      <!-- sub title -->
+      <h3 class="uk-text-center uk-margin-medium-bottom">About me</h3>
+      <div class="uk-child-width-1-2@m" uk-grid>
+        <div>
+          <div class="uk-panel uk-text-center">
+            <img class="uk-border-circle" width="200" height="200" src="images/prof.jpg">
+            <p class="uk-link-reset">
+              <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="behance"></span></a>
+              <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="facebook"></span></a>
+              <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="flickr"></span></a>
+              <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="github"></span></a>
+              <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="twitter"></span></a>
+              <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="wordpress"></span></a>
+              <a href="#" target="_blank"><span class="nam__icon-space" uk-icon="youtube"></span></a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="uk-panel">
+            <p>花村貴史｜Takashi Q. Hanamura</p>
+            <p class="nam__about-content">
+              ソフトウェアエンジニア＆フォトグラファー。Web開発をしながら、人物や風景の空気感をそぉっとすくい撮ってます。脳と身体、異なる神経回路を使いながら活動中。<br>横浜生まれの横浜歴38年、松本歴2年半を経て、2018年春から関西在住。京都が近くなってうれしい。2019年11月から夫婦生活スタート。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="uk-container uk-margin-large uk-margin-remove-bottom uk-padding-large">
+      <p class="uk-text-small uk-text-center">&copy;2019 NAMLOG</p>
+    </div>
+  </footer>
+</body>
+
+</html>
