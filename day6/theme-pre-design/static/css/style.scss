@@ -1,83 +1,103 @@
-$main-background: #f8f8f8;
-$font-basic-size: 1rem;
-$headline-basic-size: 2rem;
-$line-basic-height: 1.8rem;
-$basic-space: 0.1rem;
-$font_list: fot-klee-pro, sans-serif;
-$font_list_old: "游明朝体", "YuMincho", "游明朝", "Yu Mincho", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", serif;
+//
+// 各設定はUIkitをベースとする
+// 本scssはそれを好みの設定に調整することを目的とする
+//
+$main-background: #f8f8f8; // UIkit default color
+$main-color: #ffb5ba;
+$main-color-light: lighten($main-color, 10%);
+$main-color-dark: darken($main-color, 20%);
 
+$basic-font-size: 1rem; // 各種ブラウザの規定値はおおむね16px
+$basic-headline-size: 2rem;
+$basic-line-height: 1.6rem;
+$spacer: 0.1rem;
+
+$font-sans-serif: fot-klee-pro, -apple-system, BlinkMacSystemFont, Helvetica Neue, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "ヒラギノ角ゴ ProN W3", Arial, メイリオ, Meiryo, sans-serif;
+$font-serif: "游明朝体", "YuMincho", "游明朝", "Yu Mincho", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", serif;
+
+//
+// 全体設定
+//
 body {
-  font-family: $font_list;
-  font-size: 0.9rem;
+  font-family: $font-sans-serif;
   background-color: $main-background;
   min-width: 320px;
 }
 
+//
 // ブログ記事
-article>.nam__article-content {
-  line-height: $line-basic-height;
+//
+article > * {
+  line-height: $basic-line-height;
 
-  &>h2 {
-    font-size: $headline-basic-size - ($basic-space * 4);
-    padding-bottom: calc(5px + .1em);
-    border-bottom: calc(.2px + .05em) solid #e5e5e5;
+  & > h1 {
+    font-size: $basic-headline-size;
   }
 
-  &>h3 {
-    font-size: $headline-basic-size - ($basic-space * 8);
+  & > h2 {
+    font-size: $basic-headline-size - ($spacer * 3);
+    padding-bottom: calc(5px + 0.1em);
+    border-bottom: calc(0.2px + 0.05em) solid #e5e5e5;
+  }
+
+  & > h3 {
+    font-size: $basic-headline-size - ($spacer * 6);
 
     &::before {
+      // Copied uk-list-bullet setting
       content: "";
       display: inline-block;
       position: relative;
-      top: calc(-.1 * 1em);
+      top: calc(-0.1 * 1em);
       vertical-align: middle;
-      height: calc(4px + .7em);
-      margin-right: calc(5px + .2em);
-      border-left: calc(5px + .1em) solid #e5e5e5;
+      height: calc(4px + 0.7em);
+      margin-right: calc(5px + 0.2em);
+      border-left: calc(5px + 0.1em) solid #e5e5e5;
     }
   }
 
-  &>h4 {
-    font-size: $headline-basic-size - ($basic-space * 12);
+  & > h4 {
+    font-size: $basic-headline-size - ($spacer * 9);
   }
 
-  &>blockquote {
+  & > blockquote {
     margin: 3rem 0;
-    padding: 2rem;
-    font-size: $font-basic-size - 0.1rem;
-    line-height: $line-basic-height - 0.2rem;
+    padding: 1.5rem;
+    font-size: $basic-font-size - 0.1rem;
+    line-height: $basic-line-height - 0.2rem;
     background-color: $main-background;
   }
 }
 
 .nam__icon-space {
-  padding-right: $basic-space * 3;
+  padding-right: $spacer * 3;
 }
 
 .nam__about-content {
-  line-height: $line-basic-height;
+  line-height: $basic-line-height;
 }
 
-/*-- 既存クラスをオーバーライド --*/
+.nam__text-xsmall {
+  font-size: $basic-font-size - 0.3rem;
+}
+
+//
+// 既存クラスをオーバーライド
+//
 .uk-card-default {
   box-shadow: none;
 }
 
 .uk-card-title {
-  font-size: $font-basic-size + 0.05rem;
-}
-
-.uk-article-title {
-  font-size: $headline-basic-size;
+  font-size: $basic-font-size + 0.1rem;
 }
 
 .uk-article-meta,
 .uk-text-meta,
 .uk-label {
-  font-size: $font-basic-size - 0.2rem;
+  font-size: $basic-font-size - 0.2rem;
 }
 
 .uk-text-small {
-  font-size: $font-basic-size - 0.25rem;
+  font-size: $basic-font-size - 0.15rem;
 }
