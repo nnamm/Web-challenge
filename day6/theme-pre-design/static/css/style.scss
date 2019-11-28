@@ -37,7 +37,7 @@ article > * {
   & > h2 {
     font-size: $basic-headline-size - ($spacer * 3);
     padding-bottom: calc(5px + 0.1em);
-    border-bottom: calc(0.2px + 0.05em) solid #e5e5e5;
+    border-bottom: calc(0.2px + 0.03em) solid $main-color;
   }
 
   & > h3 {
@@ -52,7 +52,7 @@ article > * {
       vertical-align: middle;
       height: calc(4px + 0.7em);
       margin-right: calc(5px + 0.2em);
-      border-left: calc(5px + 0.1em) solid #e5e5e5;
+      border-left: calc(5px + 0.1em) solid $main-color;
     }
   }
 
