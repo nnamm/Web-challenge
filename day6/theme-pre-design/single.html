@@ -51,20 +51,34 @@
     </nav>
   </header>
 
+  <!-- Cover -->
+  <div>
+    <!-- PC -->
+    <div class="uk-cover-container uk-margin-medium uk-margin-remove-top uk-height-large uk-visible@m">
+      <img src="images/sample1.jpg" alt="" uk-cover>
+    </div>
+    <!-- Mobile -->
+    <div class="uk-cover-container uk-margin-remove-top uk-hidden@m">
+      <canvas width="800" height="400"></canvas>
+      <img src="images/sample2.jpg" alt="" uk-cover>
+    </div>
+  </div>
+
+  <!-- Article -->
   <div class="uk-container uk-container-xsmall uk-padding uk-background-default">
     <article class="uk-article">
-      <div class="uk-cover-container">
-        <canvas width="800" height="400"></canvas>
-        <img src="images/sample1.jpg" alt="" uk-cover>
-      </div>
 
-      <div class="uk-margin-medium-top uk-margin-medium-bottom">
+      <!-- Title -->
+      <div class="uk-margin-large-bottom">
         <h1 class="uk-article-title">記事のタイトル</h1>
         <p class="uk-article-meta"><time datetime="2016-04-01T19:00">2016.04.01</time></p>
         <div class="uk-badge uk-label uk-label-success uk-text-capitalize">Badge</div>
       </div>
 
+      <!-- Text -->
       <div>
+        <p>掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</p>
+
         <h2>見出し2</h2>
 
         <p>掌の上で少し落ちついて書生の顔を見たのがいわゆる人間というものの見始であろう。この時妙なものだと思った感じが今でも残っている。第一毛をもって装飾されべきはずの顔がつるつるしてまるで薬缶だ。</p>
@@ -113,15 +127,19 @@
 
       </div>
 
-      <!-- TODO: Contents / タグ -->
+      <!-- TODO: タグ -->
       <div></div>
 
-      <!-- TODO: Contents / 前後の記事 -->
+      <!-- TODO: 前後の記事 -->
       <div></div>
 
     </article>
   </div>
 
+  <!-- TODO: 雑誌風ギャラリー -->
+  <div></div>
+
+  <!-- About -->
   <div class="uk-container uk-container-xsmall uk-margin-medium uk-margin-remove-bottom uk-padding uk-background-default">
     <h3 class="uk-text-center uk-margin-medium-bottom">About me</h3>
     <div class="uk-child-width-1-2@m" uk-grid>
