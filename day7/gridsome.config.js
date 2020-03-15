@@ -31,20 +31,23 @@ module.exports = {
       }
     },
     {
-      use: 'gridsome-plugin-tailwindcss'
+      use: 'gridsome-plugin-tailwindcss',
+      options: {
+        shouldPurge: false
+      }
     },
     {
       use: 'gridsome-plugin-purgecss',
       options: {
         content: [
+          './src/assets/**/*.css',
           './src/**/*.vue',
           './src/**/*.js',
-          './src/**/*.jsx',
           './src/**/*.md',
           'node_modules/prismjs/**/*.js'
         ],
         extractor: TailwindExtractor,
-        extensions: ['vue', 'js', 'jsx', 'md']
+        extensions: ['vue', 'js', 'md']
       }
     },
     {
