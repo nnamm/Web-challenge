@@ -166,6 +166,6 @@ query Post ($path: String!) {
 }
 .blog-content > pre > code {
   @apply text-xs;
-  font-family: "SourceHanCodeJP-ExtraLight", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace";
+  font-family: "SourceHanCodeJP-ExtraLight", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"!important;
 }
 </style>

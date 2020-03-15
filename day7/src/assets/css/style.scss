@@ -12,7 +12,7 @@ $font-mono: "SourceHanCodeJP-ExtraLight", "Menlo", "Monaco", "Consolas", "Libera
 $font-nnamm: "YuKyo-Medium", "YuGo-Medium", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans CJK JP", Meiryo, sans-serif;
 
 body {
-  font-family: $font-nnamm;
+  font-family: $font-nnamm!important;
   background-color: $main-background;
   min-width: 320px;
 }
