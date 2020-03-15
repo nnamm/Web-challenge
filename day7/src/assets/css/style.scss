@@ -1,0 +1,54 @@
+$main-background: #f8f8f8;
+// $main-color: #ffb5ba;
+// $main-color-light: lighten($main-color, 10%);
+// $main-color-dark: darken($main-color, 20%);
+// $sub-color: #94d9ff;
+// $sub-color-light: lighten($sub-color, 10%);
+// $sub-color-dark: darken($sub-color, 20%);
+
+$font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "YuGo-Medium", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+$font-serif: "YuKyo-Medium", "YuMincho", "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", serif;
+$font-mono: "SourceHanCodeJP-ExtraLight", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace";
+$font-nnamm: "YuKyo-Medium", "YuGo-Medium", "Yu Gothic", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans CJK JP", Meiryo, sans-serif;
+
+body {
+  font-family: $font-nnamm;
+  background-color: $main-background;
+  min-width: 320px;
+}
+
+// .nam__mcolor {
+//   background-color: $main-color;
+// }
+
+// .nam__mcolor-light {
+//   background-color: $main-color-light;
+// }
+
+// .nam__mcolor-dark {
+//   background-color: $main-color-dark;
+// }
+
+// .nam__scolor {
+//   background-color: $sub-color;
+// }
+
+// .nam__scolor-light {
+//   background-color: $sub-color-light;
+// }
+
+// .nam__scolor-dark {
+//   background-color: $sub-color-dark;
+// }
+
+.nam__sans {
+  font-family: $font-sans-serif;
+}
+
+.nam__serif {
+  font-family: $font-serif;
+}
+
+.nam__mono {
+  font-family: $font-mono;
+}
