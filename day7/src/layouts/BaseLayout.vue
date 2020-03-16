@@ -44,6 +44,6 @@ export default {
   @apply text-gray-800;
   @apply leading-relaxed;
   @apply subpixel-antialiased;
-  @apply break-all;
+  @apply break-words;
 }
 </style>

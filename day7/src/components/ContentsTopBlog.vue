@@ -2,15 +2,16 @@
   <div class="w-screen mx-auto text">
     <div class="px-6 py-16 sm:px-8 sm:py-20 lg:px-15 lg:py-32 xl:px-20">
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
+        <!-- 記事 -->
         <div v-for="{ node } in $static.allPost.edges" :key="node.id"
-          class="px-6 py-4 bg-white hover-effect hover:shadow-lg" style="min-height: 320px;">
+          class="px-4 py-6 bg-white hover-effect hover:shadow-lg" style="min-height: 320px;">
           <router-link :to="node.path">
             <!-- カテゴリ -->
-            <div class="p-2 text-sm text-center text-gray-600">{{ node.category }}</div>
+            <div class="text-sm text-center text-gray-600">{{ node.category }}</div>
             <!-- タイトル -->
-            <h2 class="py-4 text-lg font-bold text-center">{{ node.title }}</h2>
+            <h2 class="pt-6 text-xl font-bold text-center">{{ node.title }}</h2>
             <!-- 投稿日 -->
-            <div class="p-1 text-center text-gray-600" style="font-size: 0.5rem;">
+            <div class="pt-5 text-xs text-center text-gray-600">
               <time :datetime="node.createdAt">{{ node.createdAt }}</time>
               <!-- 登校日と更新日が異なる場合は更新日も表示する -->
               <span v-if="node.createdAt !== node.updatedAt">
@@ -19,13 +20,13 @@
               </span>
             </div>
             <!-- アイキャッチ -->
-            <div class="my-5 hover-effect bg-gray-200">
+            <div class="my-8 hover-effect bg-gray-200">
               <img :src="node.image" class="hover-effect hover:opacity-75">
             </div>
             <!-- 説明文 -->
-            <div class="p-3 text-sm hidden md:block">{{ node.description }}</div>
+            <div class="px-4 text-sm hidden md:block">{{ node.description }}</div>
             <!-- タグ -->
-            <div class="pt-4 text-sm text-center text-gray-600">
+            <div class="pt-2 sm:pt-5 text-sm text-center text-gray-600">
               <span v-for="tag in node.tags.split(' ')" :key="tag" v-text="`#${tag}`" class="mr-2" />
             </div>
           </router-link>

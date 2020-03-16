@@ -5,11 +5,11 @@
     </template>
 
     <template v-slot:main-contents>
-      <div class="w-screen mx-auto m-10 bg-white sm:w-10/12 lg:w-8/12">
+      <div class="w-screen mx-auto m-10 py-10 bg-white sm:w-10/12 lg:w-8/12">
         <!-- タイトル -->
-        <h1 class="pt-10 pb-8 text-2xl font-bold text-center">{{ $page.post.title }}</h1>
+        <h1 class="p-4 text-3xl font-bold text-center">{{ $page.post.title }}</h1>
         <!-- 投稿日 -->
-        <div class="p-1 text-xs text-center text-gray-600">
+        <div class="py-4 text-xs text-center text-gray-600">
           <time :datetime="$page.post.createdAt">{{ $page.post.createdAt }}</time>
           <!-- 登校日と更新日が異なる場合は更新日も表示する -->
           <span v-if="$page.post.createdAt !== $page.post.updatedAt">
@@ -18,8 +18,8 @@
           </span>
         </div>
         <!-- カテゴリ -->
-        <div class="flex items-center justify-center pt-4 pb-2">
-          <div class="text-xs text-white bg-gray-600 rounded-full border border-gray-600 px-3 py-1">
+        <div class="flex items-center justify-center pt-2 pb-4">
+          <div class="text-sm text-white bg-gray-600 rounded-full border border-gray-600 px-3 py-1">
             {{ $page.post.category }}
           </div>
         </div>
@@ -30,10 +30,10 @@
         </div>
 
         <!-- 本文 -->
-        <div class="px-5 sm:px-8 lg:px-12 blog-content" v-html="$page.post.content" />
+        <div class="px-5 sm:px-8 blog-content" v-html="$page.post.content" />
 
         <!-- タグ -->
-        <div class="py-8 text-sm text-center text-gray-600">
+        <div class="pt-8 text-sm text-center text-gray-600">
           <span v-for="tag in $page.post.tags.split(' ')" :key="tag" v-text="`#${tag}`" class="mr-2" />
         </div>
       </div>
@@ -89,15 +89,17 @@ query Post ($path: String!) {
 <style>
 /* 見出し */
 .blog-content > h2 {
-  @apply text-xl;
+  @apply text-2xl;
   @apply font-bold;
+  @apply leading-loose;
   @apply pt-8;
-  padding-bottom: calc(5px + 0.1em);
-  border-bottom: calc(0.2px + 0.02em) solid #E2E8F0;
+  padding-bottom: calc(1px + 0.1em);
+  border-bottom: calc(0.5px + 0.02em) solid #CBD5E0;
 }
 .blog-content > h3 {
-  @apply text-base;
+  @apply text-lg;
   @apply font-bold;
+  @apply leading-loose;
   @apply pt-4;
 }
 .blog-content > h3::before {
@@ -106,15 +108,15 @@ query Post ($path: String!) {
     position: relative;
     top: calc(-0.1 * 1em);
     vertical-align: middle;
-    height: calc(4px + 1em);
+    height: calc(5px + 1em);
     margin-right: calc(5px + 0.2em);
-    border-left: calc(2px + 0.1em) solid #E2E8F0;
+    border-left: calc(3px + 0.1em) solid #CBD5E0;
 }
 
 /* テキスト */
 .blog-content > p {
   @apply py-4;
-  font-size: .92rem;
+  font-size: .98rem;
 }
 .blog-content > p > a:link, a:visited {
   @apply underline;
@@ -125,11 +127,6 @@ query Post ($path: String!) {
   vertical-align: middle;
   @apply w-6;
   @apply h-6;
-}
-
-/* 記事内画像 */
-.blog-content > p > img {
-  @apply mt-2;
 }
 
 /* リスト */
@@ -148,9 +145,8 @@ query Post ($path: String!) {
 
 /* 抜粋 */
 .blog-content > blockquote {
-  @apply my-4;
-  @apply px-8;
-  @apply py-6;
+  @apply m-6;
+  @apply p-8;
   @apply text-sm;
   @apply text-gray-700;
   @apply bg-gray-200;
@@ -159,13 +155,12 @@ query Post ($path: String!) {
 
 /* コードハイライト（Prism.jsベース） */
 .blog-content > pre {
-  @apply my-4;
-  @apply px-8;
-  @apply py-6;
+  @apply my-6;
+  @apply p-6;
   @apply leading-snug;
 }
 .blog-content > pre > code {
-  @apply text-xs;
-  font-family: "SourceHanCodeJP-ExtraLight", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"!important;
+  font-family: "SourceHanCodeJP-Normal", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"!important;
+  font-size: 0.8rem;
 }
 </style>

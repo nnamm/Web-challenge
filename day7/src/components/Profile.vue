@@ -14,8 +14,8 @@
         <p class="text-gray-800 text-xs text-center py-1">
           {{ profile.nameEn }}
         </p>
-        <p class="text-gray-800 text-sm text-left px-4 lg:px-0 py-6 leading-loose">
-          {{ profile.intro.first }}<br>{{ profile.intro.second }}{{ $static.metadata.siteName }}{{ profile.intro.third }}
+        <p class="text-gray-800 text-left px-4 lg:px-0 py-6 leading-loose" style="font-size: .96rem">
+          {{ profile.intro.t1 }}{{ profile.intro.t2 }}<br>{{ profile.intro.t3 }}{{ $static.metadata.siteName }}{{ profile.intro.t4 }}
         </p>
         <!-- Social -->
         <div class="flex flex-wrap justify-center text-center pt-2 px-4 lg:px-0">
@@ -41,9 +41,10 @@ export default {
         nameEn: 'Takashi Q. Hanamura',
         nickname: '（なむ）',
         intro: {
-          first: 'Web開発をしながら、撮られ慣れてない方の笑顔やステキな空気感をそっとすくい撮ってます。横浜育ち38年、脱サラ信州移住2年半を経て、2018年春から関西在住。翌年秋から夫婦生活スタート。関西に来てよかったことは京都が近くなったこと、大歓喜。',
-          second: 'そんな僕のポートフォリオサイト「',
-          third: '」をよろしくお願いします。'
+          t1: 'Web開発をしながら、撮られることに慣れてない方の笑顔やステキな空気感をそっとすくい撮ってます。',
+          t2: '横浜育ち38年、脱サラ信州移住2年半を経て、2018年春から関西在住。翌年秋から夫婦生活スタート。関西に来てよかったことは京都が近くなったこと、めっちゃ嬉しい。',
+          t3: 'そんな僕のポートフォリオサイト「',
+          t4: '」をよろしくお願いします。'
         }
       },
       social: [
