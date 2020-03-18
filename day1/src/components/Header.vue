@@ -1,7 +1,7 @@
 <template>
   <b-jumbotron bg-variant="light">
     <template v-slot:header>
-      100 Web challenge
+      100 Web challenge.
     </template>
     <template v-slot:lead>
       Learn front/back-end tech and output 100 results.

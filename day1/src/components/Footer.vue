@@ -2,7 +2,8 @@
   <div>
     <footer class="footer">
       <p class="text">
-        &copy; 2019 100 Web challenge.
+        100 Web challenge.&nbsp;
+        &copy;{{ startYear }}<span v-if="startYear!==year">-{{ year }}</span>
       </p>
       <p class="text">
         made with
@@ -34,6 +35,22 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  data: () => {
+    return {
+      startYear: 2019 // サイトスタートの年
+    }
+  },
+  computed: {
+    year: () => {
+      let dt = new Date()
+      return dt.getFullYear()
+    }
+  }
+}
+</script>
 
 <style scoped>
 .footer {
