@@ -1,19 +1,24 @@
-// TODO: トランジションアニメーションをつけたい
+// TODO: チェックボックスON/OFFしたときにトランジションアニメーションするようにしたい
 <template>
   <b-container>
     <b-row class="py-2">
       <b-col align-self="center">
         <div class="tags-list"> 
           <ul>
-            Filter by&nbsp;:&nbsp;<li
+            <span class="font-weight-bold mr-2">Filter by:</span>
+            <li
               v-for="tag in organizedTagsList"
-              :key="tag">
-              <input
-                :id="tag"
-                v-model="checkedTagsList"
-                :value="tag"
-                type="checkbox">
-              <label>&nbsp;{{ tag }}</label>
+              :key="tag"
+              class="mr-3">
+              <span class="d-inline-block">
+                <input
+                  :id="tag"
+                  v-model="checkedTagsList"
+                  :value="tag"
+                  type="checkbox"
+                  class="mr-1">
+                <label>{{ tag }}</label>
+              </span>
             </li>
           </ul>
         </div>
@@ -50,7 +55,7 @@ import { db } from '@/firebase'
 
 export default {
   name: 'Contents',
-  data() {
+  data: () => {
     return {
       daysResultList: [], // 日々の成果リスト
       filterTagsList: [], // フィルタリング用のタグリスト（表示用）
@@ -58,6 +63,7 @@ export default {
       organizedTagsList: [],
     }
   },
+
   watch: {
     // チェックボックスのON/OFFで発火
     // チェックされたタグを含む成果リスト内の表示・非表示フラグをTrue/Flaseに変更
@@ -89,9 +95,10 @@ export default {
       }
     }
   },
+
   // DOM生成直後にDBアクセス
   mounted: function() {
-    const me = this
+    const that = this
     const ref = db.collection('days')
 
     ref.get().then(querySnapshot => {
@@ -107,8 +114,8 @@ export default {
         this.daysResultList.push(data)
 
         // 取得したタグ（配列）をフィルタリング用のタグリストに追加
-        data.tags.forEach(val => {
-          me.filterTagsList.push(val)
+        data.tags.forEach(tag => {
+          that.filterTagsList.push(tag)
         })
       })
       // フィルタリング用のタグリストを昇順にソートし、重複項目を削除
@@ -118,6 +125,7 @@ export default {
       })
     })
   },
+
   methods: {
     // タグを昇順にソート
     ascSortTags(tags) {
@@ -131,9 +139,9 @@ export default {
     },
     // 取得したタグ（配列）をフィルタリング用のタグリストに追加
     setFilterTagsList(tags) {
-      let _this = this
-      tags.forEach(val => {
-        _this.filterTagsList.push(val)
+      let that = this
+      tags.forEach(tag => {
+        that.filterTagsList.push(tag)
       })
     }
   }
@@ -143,15 +151,14 @@ export default {
 <style scoprd>
 .tags-list {
   font-size: 0.9rem;
+
 }
-.tags-list ul {
+.tags-list > ul {
   padding-left: 0;
 }
-.tags-list ul,
-li {
+.tags-list ul, li {
   display: inline;
   margin-right: 0.75rem;
-  font-weight: bold;
 }
 .margin-space {
   margin-left: 0.2rem;

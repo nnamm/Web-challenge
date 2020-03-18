@@ -6,7 +6,7 @@
       </p>
       <p class="text">
         made with
-        <a
+        <a 
           href="https://jp.vuejs.org/index.html"
           target="_blank">Vue.js</a>
         <br>created by
