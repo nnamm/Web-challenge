@@ -16,4 +16,4 @@ Webのフロントエンド・バックエンド的なことを学び、その�
 
 \#6. [Design before making the HUGO theme](https://thanamura.work/_days/day6/theme-pre-design/)
 
-\#7. [My portfolio site -TEST- using Gridsome](http://gridsome-test.thanamura.work/)
+\#7. [My portfolio site using Gridsome](https://portfolio.nnamm.com/)
