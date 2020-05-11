@@ -17,3 +17,5 @@ Webのフロントエンド・バックエンド的なことを学び、その�
 \#6. [Design before making the HUGO theme](https://thanamura.work/_days/day6/theme-pre-design/)
 
 \#7. [My portfolio site using Gridsome](https://portfolio.nnamm.com/)
+
+\#8. [Tool to sync local & remote directories using python](https://github.com/nnamm/gridsome_sync)
