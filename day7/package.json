@@ -7,18 +7,18 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "gridsome": "^0.7.20"
+    "gridsome": "^0.7.21"
   },
   "devDependencies": {
-    "@gridsome/plugin-google-analytics": "^0.1.1",
+    "@gridsome/plugin-google-analytics": "^0.1.2",
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@gridsome/remark-prismjs": "^0.4.0",
     "@gridsome/source-filesystem": "^0.6.2",
-    "@gridsome/transformer-remark": "^0.6.2",
+    "@gridsome/transformer-remark": "^0.6.3",
     "gridsome-plugin-purgecss": "^1.0.12",
     "gridsome-plugin-tailwindcss": "^3.0.1",
     "gridsome-source-rss": "^1.0.0",
     "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.2"
+    "sass-loader": "^10.0.3"
   }
 }
